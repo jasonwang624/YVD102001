@@ -8,21 +8,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    EditText ed1, ed2;
+    TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ed1 = (EditText) findViewById(R.id.edQ1);
+        ed2 = (EditText) findViewById(R.id.edQ2);
+        tv = (TextView) findViewById(R.id.tvAns);
+
     }
 
     public void click1(View v)
     {
-        EditText ed1 = (EditText) findViewById(R.id.edQ1);
-        EditText ed2 = (EditText) findViewById(R.id.edQ2);
-        String str1 = ed1.getText().toString();
-        String str2 = ed2.getText().toString();
-        int Ans = Integer.parseInt(str1) + Integer.parseInt(str2);
-        TextView tv = (TextView) findViewById(R.id.tvAns);
+        int Ans = Integer.parseInt(ed1.getText().toString()) + Integer.parseInt(ed2.getText().toString());
         tv.setText(String.valueOf(Ans));
     }
 }
